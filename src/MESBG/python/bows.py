@@ -29,11 +29,10 @@ def ranged_attack(attacker, defender):
 
     strength = attacker.strength
     defense = defender.defense
+    
+    hit = perform_ranged_attack(strength, defense)
 
     
-
-
-
 
 def perform_ranged_attack(atk_strength, def_defense):
     value = compare_characteristics(atk_strength, def_defense)
