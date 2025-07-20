@@ -7,10 +7,10 @@ class BattleRound:
     
     def fight(self, to_the_end = True):
         dice = dice_rolls.Dice()
-        winner = 
+        winner = ""
+        armiesLeft = 0
         while(self.attackerArmies > 0 and self.defenderArmies > 0):
             # fight a round 
-            # TODO: wenn einer mehr hat
             atk_dice = dice.roll_dice(self.getDice(self.attackerArmies), True)
             def_dice = dice.roll_dice(self.getDice(self.defenderArmies), True)
 
@@ -24,7 +24,16 @@ class BattleRound:
             self.attackerArmies -= atk_casualties
             self.defenderArmies -= def_casualities
             print(f"atk army loss: {atk_casualties} def army loss: {def_casualities}")
-        
+            if (self.attackerArmies <= 0):
+                winner = f"Defender won with {self.defenderArmies} left"
+                armiesLeft = self.defenderArmies
+            if (self.defenderArmies <= 0):
+                winner= f"Attacker won with {self.attackerArmies} left"   
+                armiesLeft = self.attackerArmies
+        # DB Access: Winner und verbleibende Armeen
+        print(winner)
+        return (winner, armiesLeft)
+
 
     def getDice(self,armies):
         return min(3,armies)
