@@ -6,11 +6,12 @@ class Dice:
         self.sides = sides
         self.seed = rnd.seed()
 
-    def roll_dice(self, rolls = 1):
+    def roll_dice(self, rolls = 1, reverse = False):
         results = []
         for i in range(0, rolls):
             results.append(rnd.randint(1, self.sides)) 
-        results.sort()
+        # wird sortiert
+        results.sort(reverse=reverse)
         return results
 
 if __name__ == "__main__":
