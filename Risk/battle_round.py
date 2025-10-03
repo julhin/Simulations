@@ -35,7 +35,7 @@ class BattleRound:
                 armiesLeft = self.attackerArmies
                 winnerSide = "atk"
         # DB Access: Winner und verbleibende Armeen
-        #print(f"{winnerSide} : {armiesLeft}")
+        # print(f"{winnerSide} : {armiesLeft}")
         return (winnerSide, armiesLeft)
 
 
@@ -43,5 +43,6 @@ class BattleRound:
         return min(3,armies)
 
 if __name__ == "__main__":
-    battle = BattleRound(10,10)
-    battle.fight()
+    for _ in range(0,10):
+        battle = BattleRound(10,10)
+        battle.fight()
