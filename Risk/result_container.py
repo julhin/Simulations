@@ -31,5 +31,5 @@ if __name__ == "__main__":
     def_start_armies=80,
     winner='atk',
     armies_left=20
-)
-print(battle_result)
+    )
+    print(battle_result)

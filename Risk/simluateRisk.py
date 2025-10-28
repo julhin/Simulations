@@ -7,7 +7,7 @@ def simulateRisk():
 
     # wie viel Runs pro Runde 
     runs = 1000000
-    runs = 1
+    runs = 3
     max_armies = 30
     max_armies = 5
     result = {}
@@ -35,10 +35,10 @@ def simulateRisk():
                     armies_left=battleResult[1]
                 )
                 result.append(battle_result_container)
-        current_battle_id += 1  
-    # for current_result in range(0, len(result)):
-    #     print(current_result)
-    print(result)
+            current_battle_id += 1  
+    for current_result in result:
+        print(current_result)
+    
 
 if __name__ == "__main__":
     simulateRisk()
