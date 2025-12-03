@@ -1,6 +1,9 @@
 import dice_rolls
 
 class BattleRound:
+
+    MAX_DICE = 3
+
     def __init__(self,attacker, defender):
         self.attackerArmies = attacker
         self.defenderArmies = defender 
@@ -40,7 +43,7 @@ class BattleRound:
 
 
     def getDice(self,armies):
-        return min(3,armies)
+        return min(self.MAX_DICE,armies)
 
 if __name__ == "__main__":
     for _ in range(0,10):

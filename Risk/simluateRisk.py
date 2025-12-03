@@ -6,6 +6,7 @@ def simulateRisk():
     # Wie Daten darstellen? 
 
     # wie viel Runs pro Runde 
+    send_to_Db = False
     runs = 1000000
     runs = 3
     max_armies = 30
@@ -36,6 +37,11 @@ def simulateRisk():
                 )
                 result.append(battle_result_container)
             current_battle_id += 1  
+    # Hier mit einem Schalter arbeiten.
+    if send_to_Db:
+        pass
+    # find greatest battle round number. 
+    # insert list into DB (kann ich ja killen :))    
     for current_result in result:
         print(current_result)
     
